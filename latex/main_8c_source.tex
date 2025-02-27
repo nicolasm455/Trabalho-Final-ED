@@ -1,0 +1,75 @@
+\doxysection{main.\+c}
+\label{main_8c_source}\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{comment}{/*-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/\(\backslash\)}}
+\DoxyCodeLine{00013\ \textcolor{comment}{|\ \ \ \ Nicolas\ Marques\ -\/\ 832533\ \ \ \ \ \ \ \ \ \ |}}
+\DoxyCodeLine{00014\ \textcolor{comment}{|\ \ \ \ Nícolas\ Pratis\ -\/\ 828543\ \ \ \ \ \ \ \ \ \ \ |}}
+\DoxyCodeLine{00015\ \textcolor{comment}{|\ \ \ \ Pedro\ Benetton\ -\/\ 832533\ \ \ \ \ \ \ \ \ \ \ |}}
+\DoxyCodeLine{00016\ \textcolor{comment}{|\ \ \ \ Vinicius\ Camargo\ -\/\ 829996\ \ \ \ \ \ \ \ \ |}}
+\DoxyCodeLine{00017\ \textcolor{comment}{|\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}}
+\DoxyCodeLine{00018\ \textcolor{comment}{|\ \ \ \ Trabalho\ Final\ Estrutura\ de\ Dados\ |}}
+\DoxyCodeLine{00019\ \textcolor{comment}{|\ \ \ \ Professor\ Mario\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}}
+\DoxyCodeLine{00020\ \textcolor{comment}{|\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}}
+\DoxyCodeLine{00021\ \textcolor{comment}{|\ \ \ \ Controle\ de\ estoque\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ |}}
+\DoxyCodeLine{00022\ \textcolor{comment}{\(\backslash\)-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/-\/*/}}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00028\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00029\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00030\ \textcolor{preprocessor}{\#include\ "{}fila.h"{}}}
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#include\ "{}lista.h"{}}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{int}\ main()\ \{}
+\DoxyCodeLine{00039\ \ \ \ \ }
+\DoxyCodeLine{00040\ \ \ \ \ Fila*\ historicoVendas\ =\ fila\_criar();}
+\DoxyCodeLine{00041\ \ \ \ \ Lista*\ estoque\ =\ lista\_criar();\ \textcolor{comment}{//\ Lista\ de\ produtos\ no\ estoque}}
+\DoxyCodeLine{00042\ \ \ \ \ Lista*\ reposicao\ =\ lista\_criar();\ \textcolor{comment}{//\ Lista\ de\ reposicao\ necessaria}}
+\DoxyCodeLine{00043\ \ \ \ \ Lista*\ vendas\ =\ lista\_criar();\ \textcolor{comment}{//\ Lista\ de\ vendas\ realizadas}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ opcao;}
+\DoxyCodeLine{00046\ \ \ \ \ \textcolor{keywordflow}{do}\ \{}
+\DoxyCodeLine{00047\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\(\backslash\)n===\ Sistema\ de\ Controle\ de\ Estoque\ ===\(\backslash\)n"{}});}
+\DoxyCodeLine{00048\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}1\ -\/\ Adicionar\ Produto\ ao\ Estoque\(\backslash\)n"{}});}
+\DoxyCodeLine{00049\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}2\ -\/\ Realizar\ Venda\(\backslash\)n"{}});}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}3\ -\/\ Listar\ Produtos\ no\ Estoque\(\backslash\)n"{}});}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}4\ -\/\ Listar\ Vendas\ Realizadas\(\backslash\)n"{}});}
+\DoxyCodeLine{00052\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}5\ -\/\ Listar\ Reposicoes\ Necessarias\(\backslash\)n"{}});}
+\DoxyCodeLine{00053\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}6\ -\/\ Sair\(\backslash\)n"{}});}
+\DoxyCodeLine{00054\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Escolha\ uma\ opcao:\ "{}});}
+\DoxyCodeLine{00055\ \ \ \ \ \ \ \ \ scanf(\textcolor{stringliteral}{"{}\%d"{}},\ \&opcao);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{switch}\ (opcao)\ \{}
+\DoxyCodeLine{00058\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 1:}
+\DoxyCodeLine{00059\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ adicionar\_produto(estoque,\ reposicao);\ \textcolor{comment}{//\ Adiciona\ produtos\ ao\ estoque\ e\ remove\ de\ reposicao\ }}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00061\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 2:}
+\DoxyCodeLine{00062\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ realizar\_venda(estoque,\ reposicao,\ vendas,\ historicoVendas);\ \textcolor{comment}{//\ Passar\ a\ fila\ como\ parâmetro}}
+\DoxyCodeLine{00063\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 3:}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ lista\_listar(estoque);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 4:}
+\DoxyCodeLine{00068\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ fila\_listar(historicoVendas);}
+\DoxyCodeLine{00069\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00070\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 5:}
+\DoxyCodeLine{00071\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ listar\_reposicao(reposicao);\ \textcolor{comment}{//\ Agora\ percorremos\ a\ lista\ de\ reposição}}
+\DoxyCodeLine{00072\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00073\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{case}\ 6:}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Saindo...\(\backslash\)n"{}});}
+\DoxyCodeLine{00075\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{break};}
+\DoxyCodeLine{00076\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{default}:}
+\DoxyCodeLine{00077\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Opcao\ invalida.\(\backslash\)n"{}});}
+\DoxyCodeLine{00078\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00079\ \ \ \ \ \}\ \textcolor{keywordflow}{while}\ (opcao\ !=\ 6);}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00081\ \ \ \ \ lista\_liberar(estoque);\ \textcolor{comment}{//\ Liberando\ estoque}}
+\DoxyCodeLine{00082\ \ \ \ \ lista\_liberar(reposicao);\ \textcolor{comment}{//\ Liberando\ reposicao}}
+\DoxyCodeLine{00083\ \ \ \ \ lista\_liberar(vendas);\ \textcolor{comment}{//\ Liberando\ vendas}}
+\DoxyCodeLine{00084\ \}}
+
+\end{DoxyCode}

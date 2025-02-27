@@ -1,0 +1,300 @@
+\doxysection{lista.\+h File Reference}
+\label{lista_8h}\index{lista.h@{lista.h}}
+
+
+Arquivo de cabeçalho com as funções relativas a manipulação de listas.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Produto}
+\begin{DoxyCompactList}\small\item\em Struct \doxyref{Produto}{p.}{struct_produto}. \end{DoxyCompactList}\item 
+struct \textbf{ No}
+\begin{DoxyCompactList}\small\item\em Struct do Nó do \doxyref{Produto}{p.}{struct_produto}. \end{DoxyCompactList}\item 
+struct \textbf{ Lista}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \textbf{ Fila} \textbf{ fila}
+\item 
+\label{lista_8h_ac95a1d21b3cb8d691f40e1325258d9b5} 
+typedef struct Produto {\bfseries Produto}
+\begin{DoxyCompactList}\small\item\em Struct \doxyref{Produto}{p.}{struct_produto}. \end{DoxyCompactList}\item 
+\label{lista_8h_a4b43d871b3b95d055eb797c21c0f1a86} 
+typedef struct No {\bfseries No}
+\begin{DoxyCompactList}\small\item\em Struct do Nó do \doxyref{Produto}{p.}{struct_produto}. \end{DoxyCompactList}\item 
+\label{lista_8h_ab6aeb4753d1976cda3b3db928711cfe5} 
+typedef struct Lista {\bfseries Lista}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Lista} $\ast$ \textbf{ lista\+\_\+criar} ()
+\begin{DoxyCompactList}\small\item\em Função para criar uma lista dinâmica. \end{DoxyCompactList}\item 
+void \textbf{ lista\+\_\+inserir\+\_\+fim} (\textbf{ Lista} $\ast$l, \textbf{ Produto} p)
+\begin{DoxyCompactList}\small\item\em Função para inserir um produto no fim da lista. \end{DoxyCompactList}\item 
+\textbf{ Produto} \textbf{ lista\+\_\+remover\+\_\+no} (\textbf{ Lista} $\ast$l, \textbf{ No} $\ast$no)
+\begin{DoxyCompactList}\small\item\em Função para remover um produto da lista usando nó. \end{DoxyCompactList}\item 
+\textbf{ No} $\ast$ \textbf{ lista\+\_\+buscar} (\textbf{ Lista} $\ast$l, int id)
+\begin{DoxyCompactList}\small\item\em Função para buscar um produto na lista. \end{DoxyCompactList}\item 
+void \textbf{ adicionar\+\_\+produto} (\textbf{ Lista} $\ast$estoque, \textbf{ Lista} $\ast$reposicao)
+\begin{DoxyCompactList}\small\item\em Função para adicionar um produto ao estoque. \end{DoxyCompactList}\item 
+void \textbf{ listar\+\_\+vendas} (\textbf{ Lista} $\ast$vendas)
+\begin{DoxyCompactList}\small\item\em Função para listar as vendas realizadas. \end{DoxyCompactList}\item 
+void \textbf{ lista\+\_\+listar} (\textbf{ Lista} $\ast$l)
+\begin{DoxyCompactList}\small\item\em Função para listar os produtos no estoque. \end{DoxyCompactList}\item 
+void \textbf{ listar\+\_\+reposicao} (\textbf{ Lista} $\ast$l)
+\begin{DoxyCompactList}\small\item\em Função para listar os produtos que necessitam de reposição. \end{DoxyCompactList}\item 
+void \textbf{ realizar\+\_\+venda} (\textbf{ Lista} $\ast$estoque, \textbf{ Lista} $\ast$reposicao, \textbf{ Lista} $\ast$vendas, \textbf{ fila} $\ast$historico\+Vendas)
+\begin{DoxyCompactList}\small\item\em Função para realizar uma venda. \end{DoxyCompactList}\item 
+void \textbf{ lista\+\_\+liberar} (\textbf{ Lista} $\ast$l)
+\begin{DoxyCompactList}\small\item\em Função para liberar a memória alocada pela lista. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Arquivo de cabeçalho com as funções relativas a manipulação de listas. 
+
+\begin{DoxyAuthor}{Author}
+Nicolas Marques, Nícolas Pratis, Pedro Benetton, Vinicius. 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/02-\/27
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+Definition in file \textbf{ lista.\+h}.
+
+
+
+\doxysubsection{Typedef Documentation}
+\index{lista.h@{lista.h}!fila@{fila}}
+\index{fila@{fila}!lista.h@{lista.h}}
+\doxysubsubsection{fila}
+{\footnotesize\ttfamily \label{lista_8h_ada0a3a460e3d58572eba2c4ced59a55a} 
+typedef struct \textbf{ Fila} \textbf{ fila}}
+
+
+
+Definition at line \textbf{ 17} of file \textbf{ lista.\+h}.
+
+
+
+\doxysubsection{Function Documentation}
+\index{lista.h@{lista.h}!adicionar\_produto@{adicionar\_produto}}
+\index{adicionar\_produto@{adicionar\_produto}!lista.h@{lista.h}}
+\doxysubsubsection{adicionar\_produto()}
+{\footnotesize\ttfamily \label{lista_8h_ace87c1f9c644c5300e0723d6e5688ba8} 
+void adicionar\+\_\+produto (\begin{DoxyParamCaption}\item[{\textbf{ Lista} $\ast$}]{estoque}{, }\item[{\textbf{ Lista} $\ast$}]{reposicao}{}\end{DoxyParamCaption})}
+
+
+
+Função para adicionar um produto ao estoque. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em estoque} & \\
+\hline
+{\em reposicao} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 52} of file \textbf{ lista.\+c}.
+
+\index{lista.h@{lista.h}!lista\_buscar@{lista\_buscar}}
+\index{lista\_buscar@{lista\_buscar}!lista.h@{lista.h}}
+\doxysubsubsection{lista\_buscar()}
+{\footnotesize\ttfamily \label{lista_8h_a497846bb458c4d2658771895f14eacef} 
+\textbf{ No} $\ast$ lista\+\_\+buscar (\begin{DoxyParamCaption}\item[{\textbf{ Lista} $\ast$}]{l}{, }\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Função para buscar um produto na lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & \\
+\hline
+{\em id} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+No$\ast$ 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 122} of file \textbf{ lista.\+c}.
+
+\index{lista.h@{lista.h}!lista\_criar@{lista\_criar}}
+\index{lista\_criar@{lista\_criar}!lista.h@{lista.h}}
+\doxysubsubsection{lista\_criar()}
+{\footnotesize\ttfamily \label{lista_8h_a832fcfd72cdc87dd2f92a4ede1522111} 
+\textbf{ Lista} $\ast$ lista\+\_\+criar (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Função para criar uma lista dinâmica. 
+
+\begin{DoxyReturn}{Returns}
+Lista$\ast$ 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 24} of file \textbf{ lista.\+c}.
+
+\index{lista.h@{lista.h}!lista\_inserir\_fim@{lista\_inserir\_fim}}
+\index{lista\_inserir\_fim@{lista\_inserir\_fim}!lista.h@{lista.h}}
+\doxysubsubsection{lista\_inserir\_fim()}
+{\footnotesize\ttfamily \label{lista_8h_afb5f94d439078f57e9877bccbe722248} 
+void lista\+\_\+inserir\+\_\+fim (\begin{DoxyParamCaption}\item[{\textbf{ Lista} $\ast$}]{l}{, }\item[{\textbf{ Produto}}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Função para inserir um produto no fim da lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & \\
+\hline
+{\em p} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 38} of file \textbf{ lista.\+c}.
+
+\index{lista.h@{lista.h}!lista\_liberar@{lista\_liberar}}
+\index{lista\_liberar@{lista\_liberar}!lista.h@{lista.h}}
+\doxysubsubsection{lista\_liberar()}
+{\footnotesize\ttfamily \label{lista_8h_a72bac8a1712c314a13a9b3bbc87233a6} 
+void lista\+\_\+liberar (\begin{DoxyParamCaption}\item[{\textbf{ Lista} $\ast$}]{l}{}\end{DoxyParamCaption})}
+
+
+
+Função para liberar a memória alocada pela lista. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 220} of file \textbf{ lista.\+c}.
+
+\index{lista.h@{lista.h}!lista\_listar@{lista\_listar}}
+\index{lista\_listar@{lista\_listar}!lista.h@{lista.h}}
+\doxysubsubsection{lista\_listar()}
+{\footnotesize\ttfamily \label{lista_8h_a928a9c5bd69e5c250c90797317fab4f6} 
+void lista\+\_\+listar (\begin{DoxyParamCaption}\item[{\textbf{ Lista} $\ast$}]{l}{}\end{DoxyParamCaption})}
+
+
+
+Função para listar os produtos no estoque. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 138} of file \textbf{ lista.\+c}.
+
+\index{lista.h@{lista.h}!lista\_remover\_no@{lista\_remover\_no}}
+\index{lista\_remover\_no@{lista\_remover\_no}!lista.h@{lista.h}}
+\doxysubsubsection{lista\_remover\_no()}
+{\footnotesize\ttfamily \label{lista_8h_a5b813f37ecbe231cdbd07e084e74c2d1} 
+\textbf{ Produto} lista\+\_\+remover\+\_\+no (\begin{DoxyParamCaption}\item[{\textbf{ Lista} $\ast$}]{l}{, }\item[{\textbf{ No} $\ast$}]{no}{}\end{DoxyParamCaption})}
+
+
+
+Função para remover um produto da lista usando nó. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & \\
+\hline
+{\em no} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{Produto}{p.}{struct_produto} 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 102} of file \textbf{ lista.\+c}.
+
+\index{lista.h@{lista.h}!listar\_reposicao@{listar\_reposicao}}
+\index{listar\_reposicao@{listar\_reposicao}!lista.h@{lista.h}}
+\doxysubsubsection{listar\_reposicao()}
+{\footnotesize\ttfamily \label{lista_8h_a6194abf239dfb72f6452098a513f5167} 
+void listar\+\_\+reposicao (\begin{DoxyParamCaption}\item[{\textbf{ Lista} $\ast$}]{reposicao}{}\end{DoxyParamCaption})}
+
+
+
+Função para listar os produtos que necessitam de reposição. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em l} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 156} of file \textbf{ lista.\+c}.
+
+\index{lista.h@{lista.h}!listar\_vendas@{listar\_vendas}}
+\index{listar\_vendas@{listar\_vendas}!lista.h@{lista.h}}
+\doxysubsubsection{listar\_vendas()}
+{\footnotesize\ttfamily \label{lista_8h_ad8a0eabac5111089283a04efba0af464} 
+void listar\+\_\+vendas (\begin{DoxyParamCaption}\item[{\textbf{ Lista} $\ast$}]{vendas}{}\end{DoxyParamCaption})}
+
+
+
+Função para listar as vendas realizadas. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vendas} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 78} of file \textbf{ lista.\+c}.
+
+\index{lista.h@{lista.h}!realizar\_venda@{realizar\_venda}}
+\index{realizar\_venda@{realizar\_venda}!lista.h@{lista.h}}
+\doxysubsubsection{realizar\_venda()}
+{\footnotesize\ttfamily \label{lista_8h_aa7525d67130b08948c8eafbc53fd96e9} 
+void realizar\+\_\+venda (\begin{DoxyParamCaption}\item[{\textbf{ Lista} $\ast$}]{estoque}{, }\item[{\textbf{ Lista} $\ast$}]{reposicao}{, }\item[{\textbf{ Lista} $\ast$}]{vendas}{, }\item[{\textbf{ fila} $\ast$}]{historico\+Vendas}{}\end{DoxyParamCaption})}
+
+
+
+Função para realizar uma venda. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em estoque} & \\
+\hline
+{\em reposicao} & \\
+\hline
+{\em vendas} & \\
+\hline
+{\em historico\+Vendas} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 180} of file \textbf{ lista.\+c}.
+

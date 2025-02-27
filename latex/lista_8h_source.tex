@@ -1,0 +1,40 @@
+\doxysection{lista.\+h}
+\label{lista_8h_source}\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ LISTA\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ LISTA\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }Fila\ fila;}
+\DoxyCodeLine{00022\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }Produto\ \{}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{int}\ id;}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{char}\ nome[50];}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keywordtype}{int}\ quantidade;}
+\DoxyCodeLine{00026\ \}\ Produto;}
+\DoxyCodeLine{00031\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }No\ \{}
+\DoxyCodeLine{00032\ \ \ \ \ Produto\ produto;}
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{struct\ }No*\ proximo;}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{struct\ }No*\ anterior;}
+\DoxyCodeLine{00035\ \}\ No;}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }Lista\ \{}
+\DoxyCodeLine{00038\ \ \ \ \ No*\ sentinela;\ \textcolor{comment}{//\ Nó\ sentinela}}
+\DoxyCodeLine{00039\ \}\ Lista;}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ Lista*\ lista\_criar();}
+\DoxyCodeLine{00042\ \textcolor{keywordtype}{void}\ lista\_inserir\_fim(Lista*\ l,\ Produto\ p);}
+\DoxyCodeLine{00043\ Produto\ lista\_remover\_no(Lista*\ l,\ No*\ no);}
+\DoxyCodeLine{00044\ No*\ lista\_buscar(Lista*\ l,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ adicionar\_produto(Lista*\ estoque,\ Lista*\ reposicao);}
+\DoxyCodeLine{00046\ \textcolor{keywordtype}{void}\ listar\_vendas(Lista*\ vendas);}
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{void}\ lista\_listar(Lista*\ l);}
+\DoxyCodeLine{00048\ \textcolor{keywordtype}{void}\ listar\_reposicao(Lista*\ l);}
+\DoxyCodeLine{00049\ \textcolor{keywordtype}{void}\ realizar\_venda(Lista*\ estoque,\ Lista*\ reposicao,\ Lista*\ vendas,\ fila*\ historicoVendas);}
+\DoxyCodeLine{00050\ \textcolor{keywordtype}{void}\ lista\_liberar(Lista*\ l);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

@@ -1,0 +1,29 @@
+\doxysection{fila.\+h}
+\label{fila_8h_source}\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#ifndef\ FILA\_H}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#define\ FILA\_H}}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}lista.h"{}}}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }NoFila\ \{}
+\DoxyCodeLine{00021\ \ \ \ \ Produto\ produto;}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keyword}{struct\ }NoFila*\ proximo;}
+\DoxyCodeLine{00023\ \}\ NoFila;}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }Fila\ \{}
+\DoxyCodeLine{00030\ \ \ \ \ NoFila*\ inicio;}
+\DoxyCodeLine{00031\ \ \ \ \ NoFila*\ fim;}
+\DoxyCodeLine{00032\ \}\ Fila;}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ Fila*\ fila\_criar();}
+\DoxyCodeLine{00035\ \textcolor{keywordtype}{void}\ fila\_inserir(Fila*\ f,\ Produto\ p);}
+\DoxyCodeLine{00036\ Produto\ fila\_remover(Fila*\ f);}
+\DoxyCodeLine{00037\ \textcolor{keywordtype}{int}\ fila\_vazia(Fila*\ f);}
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ fila\_liberar(Fila*\ f);}
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{void}\ fila\_listar(Fila*\ f);}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

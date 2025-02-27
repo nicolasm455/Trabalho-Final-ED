@@ -1,0 +1,166 @@
+\doxysection{lista.\+c}
+\label{lista_8c_source}\textbf{ Go to the documentation of this file.}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <stdio.h>}}
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <stdlib.h>}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <string.h>}}
+\DoxyCodeLine{00014\ \textcolor{preprocessor}{\#include\ "{}lista.h"{}}}
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ "{}fila.h"{}}}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00024\ Lista*\ lista\_criar()\ \{\ }
+\DoxyCodeLine{00025\ \ \ \ \ Lista*\ l\ =\ (Lista*)\ malloc(\textcolor{keyword}{sizeof}(Lista));}
+\DoxyCodeLine{00026\ \ \ \ \ l-\/>sentinela\ =\ (No*)\ malloc(\textcolor{keyword}{sizeof}(No));}
+\DoxyCodeLine{00027\ \ \ \ \ l-\/>sentinela-\/>proximo\ =\ l-\/>sentinela;}
+\DoxyCodeLine{00028\ \ \ \ \ l-\/>sentinela-\/>anterior\ =\ l-\/>sentinela;}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordflow}{return}\ l;}
+\DoxyCodeLine{00030\ \}}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00038\ \textcolor{keywordtype}{void}\ lista\_inserir\_fim(Lista*\ l,\ Produto\ p)\ \{\ \textcolor{comment}{//\ Funcao\ para\ inserir\ no\ fim\ da\ lista.}}
+\DoxyCodeLine{00039\ \ \ \ \ No*\ novo\ =\ (No*)\ malloc(\textcolor{keyword}{sizeof}(No));}
+\DoxyCodeLine{00040\ \ \ \ \ novo-\/>produto\ =\ p;}
+\DoxyCodeLine{00041\ \ \ \ \ novo-\/>proximo\ =\ l-\/>sentinela;}
+\DoxyCodeLine{00042\ \ \ \ \ novo-\/>anterior\ =\ l-\/>sentinela-\/>anterior;}
+\DoxyCodeLine{00043\ \ \ \ \ l-\/>sentinela-\/>anterior-\/>proximo\ =\ novo;}
+\DoxyCodeLine{00044\ \ \ \ \ l-\/>sentinela-\/>anterior\ =\ novo;}
+\DoxyCodeLine{00045\ \}}
+\DoxyCodeLine{00052\ \textcolor{keywordtype}{void}\ adicionar\_produto(Lista*\ estoque,\ Lista*\ reposicao)\ \{\ }
+\DoxyCodeLine{00053\ \ \ \ \ Produto\ p;}
+\DoxyCodeLine{00054\ \ \ \ \ printf(\textcolor{stringliteral}{"{}ID\ do\ produto:\ "{}});}
+\DoxyCodeLine{00055\ \ \ \ \ scanf(\textcolor{stringliteral}{"{}\%d"{}},\ \&p.id);}
+\DoxyCodeLine{00056\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Nome\ do\ produto:\ "{}});}
+\DoxyCodeLine{00057\ \ \ \ \ scanf(\textcolor{stringliteral}{"{}\%s"{}},\ p.nome);}
+\DoxyCodeLine{00058\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Quantidade:\ "{}});}
+\DoxyCodeLine{00059\ \ \ \ \ scanf(\textcolor{stringliteral}{"{}\%d"{}},\ \&p.quantidade);}
+\DoxyCodeLine{00060\ }
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{comment}{//\ Verifica\ se\ o\ produto\ está\ na\ lista\ de\ reposicao}}
+\DoxyCodeLine{00062\ \ \ \ \ No*\ no\_reposicao\ =\ lista\_buscar(reposicao,\ p.id);}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordflow}{if}\ (no\_reposicao\ !=\ NULL)\ \{\ }
+\DoxyCodeLine{00064\ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ Se\ o\ produto\ estava\ na\ reposicao,\ ele\ é\ removido\ de\ lá}}
+\DoxyCodeLine{00065\ \ \ \ \ \ \ \ \ lista\_remover\_no(reposicao,\ no\_reposicao);}
+\DoxyCodeLine{00066\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Produto\ \%s\ removido\ da\ lista\ de\ reposicao.\(\backslash\)n"{}},\ p.nome);}
+\DoxyCodeLine{00067\ \ \ \ \ \}}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ \ \ \ \ lista\_inserir\_fim(estoque,\ p);\ \textcolor{comment}{//\ Insere\ no\ estoque}}
+\DoxyCodeLine{00070\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Produto\ adicionado\ ao\ estoque.\(\backslash\)n"{}});}
+\DoxyCodeLine{00071\ \}}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00078\ \textcolor{keywordtype}{void}\ listar\_vendas(Lista*\ vendas)\ \{}
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keywordflow}{if}\ (vendas-\/>sentinela\ ==\ NULL\ ||\ vendas-\/>sentinela-\/>proximo\ ==\ vendas-\/>sentinela)\ \{}
+\DoxyCodeLine{00080\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Nenhuma\ venda\ foi\ realizada\ ainda.\(\backslash\)n"{}});}
+\DoxyCodeLine{00081\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00082\ \ \ \ \ \}}
+\DoxyCodeLine{00083\ }
+\DoxyCodeLine{00084\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Lista\ de\ Vendas\ Realizadas:\(\backslash\)n"{}});}
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keywordtype}{int}\ contador\ =\ 1;}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00087\ \ \ \ \ No*\ atual\ =\ vendas-\/>sentinela-\/>proximo;}
+\DoxyCodeLine{00088\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ vendas-\/>sentinela)\ \{}
+\DoxyCodeLine{00089\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%d\ -\/\ \%s\ |\ Quantidade:\ \%d\(\backslash\)n"{}},\ contador++,\ atual-\/>produto.nome,\ atual-\/>produto.quantidade);}
+\DoxyCodeLine{00090\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>proximo;}
+\DoxyCodeLine{00091\ \ \ \ \ \}}
+\DoxyCodeLine{00092\ \}}
+\DoxyCodeLine{00093\ }
+\DoxyCodeLine{00094\ }
+\DoxyCodeLine{00102\ Produto\ lista\_remover\_no(Lista*\ l,\ No*\ no)\ \{\ \textcolor{comment}{//\ Funcao\ que\ remove\ produto\ da\ lista.}}
+\DoxyCodeLine{00103\ \ \ \ \ \textcolor{keywordflow}{if}\ (no\ ==\ l-\/>sentinela)\ \{}
+\DoxyCodeLine{00104\ \ \ \ \ \ \ \ \ Produto\ erro;}
+\DoxyCodeLine{00105\ \ \ \ \ \ \ \ \ erro.id\ =\ -\/1;}
+\DoxyCodeLine{00106\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ erro;}
+\DoxyCodeLine{00107\ \ \ \ \ \}}
+\DoxyCodeLine{00108\ \ \ \ \ no-\/>anterior-\/>proximo\ =\ no-\/>proximo;}
+\DoxyCodeLine{00109\ \ \ \ \ no-\/>proximo-\/>anterior\ =\ no-\/>anterior;}
+\DoxyCodeLine{00110\ \ \ \ \ Produto\ p\ =\ no-\/>produto;}
+\DoxyCodeLine{00111\ \ \ \ \ free(no);}
+\DoxyCodeLine{00112\ \ \ \ \ \textcolor{keywordflow}{return}\ p;}
+\DoxyCodeLine{00113\ \}}
+\DoxyCodeLine{00114\ }
+\DoxyCodeLine{00122\ No*\ lista\_buscar(Lista*\ l,\ \textcolor{keywordtype}{int}\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{00123\ \ \ \ \ No*\ atual\ =\ l-\/>sentinela-\/>proximo;}
+\DoxyCodeLine{00124\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ l-\/>sentinela)\ \{}
+\DoxyCodeLine{00125\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{if}\ (atual-\/>produto.id\ ==\ \textcolor{keywordtype}{id})\ \{}
+\DoxyCodeLine{00126\ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ atual;}
+\DoxyCodeLine{00127\ \ \ \ \ \ \ \ \ \}}
+\DoxyCodeLine{00128\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>proximo;}
+\DoxyCodeLine{00129\ \ \ \ \ \}}
+\DoxyCodeLine{00130\ \ \ \ \ \textcolor{keywordflow}{return}\ NULL;}
+\DoxyCodeLine{00131\ \}}
+\DoxyCodeLine{00132\ }
+\DoxyCodeLine{00138\ \textcolor{keywordtype}{void}\ lista\_listar(Lista*\ l)\ \{}
+\DoxyCodeLine{00139\ \ \ \ \ \textcolor{keywordflow}{if}\ (l-\/>sentinela\ ==\ NULL\ ||\ l-\/>sentinela-\/>proximo\ ==\ l-\/>sentinela)\ \{}
+\DoxyCodeLine{00140\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Nao\ ha\ itens\ no\ estoque.\(\backslash\)n"{}});}
+\DoxyCodeLine{00141\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00142\ \ \ \ \ \}}
+\DoxyCodeLine{00143\ \ \ \ \ }
+\DoxyCodeLine{00144\ \ \ \ \ No*\ atual\ =\ l-\/>sentinela-\/>proximo;}
+\DoxyCodeLine{00145\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ l-\/>sentinela)\ \{}
+\DoxyCodeLine{00146\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}ID:\ \%d,\ Nome:\ \%s,\ Quantidade:\ \%d\(\backslash\)n"{}},\ atual-\/>produto.id,\ atual-\/>produto.nome,\ atual-\/>produto.quantidade);}
+\DoxyCodeLine{00147\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>proximo;}
+\DoxyCodeLine{00148\ \ \ \ \ \}}
+\DoxyCodeLine{00149\ \}}
+\DoxyCodeLine{00150\ }
+\DoxyCodeLine{00156\ \textcolor{keywordtype}{void}\ listar\_reposicao(Lista*\ reposicao)\ \{}
+\DoxyCodeLine{00157\ \ \ \ \ \textcolor{keywordflow}{if}\ (reposicao-\/>sentinela\ ==\ NULL\ ||\ reposicao-\/>sentinela-\/>proximo\ ==\ reposicao-\/>sentinela)\ \{}
+\DoxyCodeLine{00158\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Nenhum\ item\ precisa\ de\ reposicao.\(\backslash\)n"{}});}
+\DoxyCodeLine{00159\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00160\ \ \ \ \ \}}
+\DoxyCodeLine{00161\ \ \ \ \ }
+\DoxyCodeLine{00162\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Itens\ que\ necessitam\ de\ reposicao:\(\backslash\)n"{}});}
+\DoxyCodeLine{00163\ \ \ \ \ \textcolor{keywordtype}{int}\ contador\ =\ 1;}
+\DoxyCodeLine{00164\ \ \ \ \ }
+\DoxyCodeLine{00165\ \ \ \ \ No*\ atual\ =\ reposicao-\/>sentinela-\/>proximo;}
+\DoxyCodeLine{00166\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ reposicao-\/>sentinela)\ \{}
+\DoxyCodeLine{00167\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%d\ -\/\ \%s\(\backslash\)n"{}},\ contador++,\ atual-\/>produto.nome);}
+\DoxyCodeLine{00168\ \ \ \ \ \ \ \ \ atual\ =\ atual-\/>proximo;}
+\DoxyCodeLine{00169\ \ \ \ \ \}}
+\DoxyCodeLine{00170\ \}}
+\DoxyCodeLine{00171\ }
+\DoxyCodeLine{00180\ \textcolor{keywordtype}{void}\ realizar\_venda(Lista*\ estoque,\ Lista*\ reposicao,\ Lista*\ vendas,\ fila*\ historicoVendas)\ \{}
+\DoxyCodeLine{00181\ \ \ \ \ \textcolor{keywordtype}{int}\ id,\ quantidade;}
+\DoxyCodeLine{00182\ \ \ \ \ printf(\textcolor{stringliteral}{"{}ID\ do\ produto\ para\ venda:\ "{}});}
+\DoxyCodeLine{00183\ \ \ \ \ scanf(\textcolor{stringliteral}{"{}\%d"{}},\ \&\textcolor{keywordtype}{id});}
+\DoxyCodeLine{00184\ \ \ \ \ }
+\DoxyCodeLine{00185\ \ \ \ \ No*\ no\ =\ lista\_buscar(estoque,\ \textcolor{keywordtype}{id});}
+\DoxyCodeLine{00186\ \ \ \ \ \textcolor{keywordflow}{if}\ (no\ ==\ NULL)\ \{}
+\DoxyCodeLine{00187\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Produto\ nao\ encontrado\ no\ estoque.\(\backslash\)n"{}});}
+\DoxyCodeLine{00188\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00189\ \ \ \ \ \}}
+\DoxyCodeLine{00190\ \ \ \ \ }
+\DoxyCodeLine{00191\ \ \ \ \ printf(\textcolor{stringliteral}{"{}Quantidade\ para\ remover:\ "{}});}
+\DoxyCodeLine{00192\ \ \ \ \ scanf(\textcolor{stringliteral}{"{}\%d"{}},\ \&quantidade);}
+\DoxyCodeLine{00193\ \ \ \ \ }
+\DoxyCodeLine{00194\ \ \ \ \ \textcolor{keywordflow}{if}\ (quantidade\ >\ no-\/>produto.quantidade)\ \{}
+\DoxyCodeLine{00195\ \ \ \ \ \ \ \ \ printf(\textcolor{stringliteral}{"{}Quantidade\ insuficiente\ no\ estoque.\(\backslash\)n"{}});}
+\DoxyCodeLine{00196\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return};}
+\DoxyCodeLine{00197\ \ \ \ \ \}}
+\DoxyCodeLine{00198\ \ \ \ \ }
+\DoxyCodeLine{00199\ \ \ \ \ Produto\ vendido\ =\ no-\/>produto;}
+\DoxyCodeLine{00200\ \ \ \ \ vendido.quantidade\ =\ quantidade;\ \textcolor{comment}{//\ Salva\ apenas\ a\ quantidade\ vendida}}
+\DoxyCodeLine{00201\ \ \ \ \ }
+\DoxyCodeLine{00202\ \ \ \ \ lista\_inserir\_fim(vendas,\ vendido);\ \textcolor{comment}{//\ Adiciona\ a\ venda\ à\ lista\ de\ vendas}}
+\DoxyCodeLine{00203\ \ \ \ \ fila\_inserir(historicoVendas,\ vendido);\ \textcolor{comment}{//\ Adiciona\ a\ venda\ à\ fila\ de\ histórico}}
+\DoxyCodeLine{00204\ }
+\DoxyCodeLine{00205\ \ \ \ \ no-\/>produto.quantidade\ -\/=\ quantidade;}
+\DoxyCodeLine{00206\ \ \ \ \ }
+\DoxyCodeLine{00207\ \ \ \ \ \textcolor{keywordflow}{if}\ (no-\/>produto.quantidade\ ==\ 0)\ \{\ \textcolor{comment}{//\ Se\ zerar\ o\ estoque,\ adiciona\ à\ reposição\ e\ remove\ do\ estoque}}
+\DoxyCodeLine{00208\ \ \ \ \ \ \ \ \ lista\_inserir\_fim(reposicao,\ no-\/>produto);}
+\DoxyCodeLine{00209\ \ \ \ \ \ \ \ \ lista\_remover\_no(estoque,\ no);}
+\DoxyCodeLine{00210\ \ \ \ \ \}}
+\DoxyCodeLine{00211\ \ \ \ \ }
+\DoxyCodeLine{00212\ \ \ \ \ printf(\textcolor{stringliteral}{"{}\%d\ unidades\ de\ \%s\ enviadas\ para\ entrega\ e\ registradas\ como\ venda.\(\backslash\)n"{}},\ quantidade,\ vendido.nome);}
+\DoxyCodeLine{00213\ \}}
+\DoxyCodeLine{00214\ }
+\DoxyCodeLine{00220\ \textcolor{keywordtype}{void}\ lista\_liberar(Lista*\ l)\ \{}
+\DoxyCodeLine{00221\ \ \ \ \ No*\ atual\ =\ l-\/>sentinela-\/>proximo;}
+\DoxyCodeLine{00222\ \ \ \ \ \textcolor{keywordflow}{while}\ (atual\ !=\ l-\/>sentinela)\ \{}
+\DoxyCodeLine{00223\ \ \ \ \ \ \ \ \ No*\ proximo\ =\ atual-\/>proximo;}
+\DoxyCodeLine{00224\ \ \ \ \ \ \ \ \ free(atual);}
+\DoxyCodeLine{00225\ \ \ \ \ \ \ \ \ atual\ =\ proximo;}
+\DoxyCodeLine{00226\ \ \ \ \ \}}
+\DoxyCodeLine{00227\ \ \ \ \ free(l-\/>sentinela);}
+\DoxyCodeLine{00228\ \ \ \ \ free(l);}
+\DoxyCodeLine{00229\ \}}
+
+\end{DoxyCode}

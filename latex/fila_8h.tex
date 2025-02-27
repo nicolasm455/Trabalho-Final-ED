@@ -1,0 +1,183 @@
+\doxysection{fila.\+h File Reference}
+\label{fila_8h}\index{fila.h@{fila.h}}
+
+
+Arquivo header com as funções relativas a manipulação de filas.  
+
+
+{\ttfamily \#include "{}lista.\+h"{}}\newline
+\doxysubsubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ No\+Fila}
+\begin{DoxyCompactList}\small\item\em Struct do Nó da \doxyref{Fila}{p.}{struct_fila}. \end{DoxyCompactList}\item 
+struct \textbf{ Fila}
+\begin{DoxyCompactList}\small\item\em Struct da \doxyref{Fila}{p.}{struct_fila}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\label{fila_8h_a6956cc63aaf758a5ad4aa6780a52cf88} 
+typedef struct No\+Fila {\bfseries No\+Fila}
+\begin{DoxyCompactList}\small\item\em Struct do Nó da \doxyref{Fila}{p.}{struct_fila}. \end{DoxyCompactList}\item 
+\label{fila_8h_ae3d75d97a2ad3fbc90e95eae9a82fe83} 
+typedef struct Fila {\bfseries Fila}
+\begin{DoxyCompactList}\small\item\em Struct da \doxyref{Fila}{p.}{struct_fila}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Fila} $\ast$ \textbf{ fila\+\_\+criar} ()
+\begin{DoxyCompactList}\small\item\em Função para criar uma fila dinâmica. \end{DoxyCompactList}\item 
+void \textbf{ fila\+\_\+inserir} (\textbf{ Fila} $\ast$f, \textbf{ Produto} p)
+\begin{DoxyCompactList}\small\item\em Função para inserir um produto na fila. \end{DoxyCompactList}\item 
+\textbf{ Produto} \textbf{ fila\+\_\+remover} (\textbf{ Fila} $\ast$f)
+\begin{DoxyCompactList}\small\item\em Função para remover um produto da fila. \end{DoxyCompactList}\item 
+int \textbf{ fila\+\_\+vazia} (\textbf{ Fila} $\ast$f)
+\begin{DoxyCompactList}\small\item\em Função para verificar se a fila está vazia. \end{DoxyCompactList}\item 
+void \textbf{ fila\+\_\+liberar} (\textbf{ Fila} $\ast$f)
+\begin{DoxyCompactList}\small\item\em Função para liberar a memória alocada pela fila. \end{DoxyCompactList}\item 
+void \textbf{ fila\+\_\+listar} (\textbf{ Fila} $\ast$f)
+\begin{DoxyCompactList}\small\item\em Função para listar os produtos na fila. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Arquivo header com as funções relativas a manipulação de filas. 
+
+\begin{DoxyAuthor}{Author}
+Nicolas Marques, Nícolas Pratis, Pedro Benetton, Vinicius. 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2025-\/02-\/27
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2025 
+\end{DoxyCopyright}
+
+
+Definition in file \textbf{ fila.\+h}.
+
+
+
+\doxysubsection{Function Documentation}
+\index{fila.h@{fila.h}!fila\_criar@{fila\_criar}}
+\index{fila\_criar@{fila\_criar}!fila.h@{fila.h}}
+\doxysubsubsection{fila\_criar()}
+{\footnotesize\ttfamily \label{fila_8h_acfb04fcb6e21f15b30e1488f401812a7} 
+\textbf{ Fila} $\ast$ fila\+\_\+criar (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Função para criar uma fila dinâmica. 
+
+\begin{DoxyReturn}{Returns}
+Fila$\ast$ 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 22} of file \textbf{ fila.\+c}.
+
+\index{fila.h@{fila.h}!fila\_inserir@{fila\_inserir}}
+\index{fila\_inserir@{fila\_inserir}!fila.h@{fila.h}}
+\doxysubsubsection{fila\_inserir()}
+{\footnotesize\ttfamily \label{fila_8h_ad7d70ec92fe01f21548d45fc35883c5d} 
+void fila\+\_\+inserir (\begin{DoxyParamCaption}\item[{\textbf{ Fila} $\ast$}]{f}{, }\item[{\textbf{ Produto}}]{p}{}\end{DoxyParamCaption})}
+
+
+
+Função para inserir um produto na fila. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & \\
+\hline
+{\em p} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 35} of file \textbf{ fila.\+c}.
+
+\index{fila.h@{fila.h}!fila\_liberar@{fila\_liberar}}
+\index{fila\_liberar@{fila\_liberar}!fila.h@{fila.h}}
+\doxysubsubsection{fila\_liberar()}
+{\footnotesize\ttfamily \label{fila_8h_abbaab0240d6ebdf728d4274b05f107d2} 
+void fila\+\_\+liberar (\begin{DoxyParamCaption}\item[{\textbf{ Fila} $\ast$}]{f}{}\end{DoxyParamCaption})}
+
+
+
+Função para liberar a memória alocada pela fila. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 88} of file \textbf{ fila.\+c}.
+
+\index{fila.h@{fila.h}!fila\_listar@{fila\_listar}}
+\index{fila\_listar@{fila\_listar}!fila.h@{fila.h}}
+\doxysubsubsection{fila\_listar()}
+{\footnotesize\ttfamily \label{fila_8h_a17afe16f8cc84c3e52928fb2c50e392a} 
+void fila\+\_\+listar (\begin{DoxyParamCaption}\item[{\textbf{ Fila} $\ast$}]{f}{}\end{DoxyParamCaption})}
+
+
+
+Função para listar os produtos na fila. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line \textbf{ 100} of file \textbf{ fila.\+c}.
+
+\index{fila.h@{fila.h}!fila\_remover@{fila\_remover}}
+\index{fila\_remover@{fila\_remover}!fila.h@{fila.h}}
+\doxysubsubsection{fila\_remover()}
+{\footnotesize\ttfamily \label{fila_8h_a1f276d6a841f662fd2aaa46349f80d52} 
+\textbf{ Produto} fila\+\_\+remover (\begin{DoxyParamCaption}\item[{\textbf{ Fila} $\ast$}]{f}{}\end{DoxyParamCaption})}
+
+
+
+Função para remover um produto da fila. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{Produto}{p.}{struct_produto} 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 54} of file \textbf{ fila.\+c}.
+
+\index{fila.h@{fila.h}!fila\_vazia@{fila\_vazia}}
+\index{fila\_vazia@{fila\_vazia}!fila.h@{fila.h}}
+\doxysubsubsection{fila\_vazia()}
+{\footnotesize\ttfamily \label{fila_8h_af0f95f0679da08a2527c3f7da75b34b8} 
+int fila\+\_\+vazia (\begin{DoxyParamCaption}\item[{\textbf{ Fila} $\ast$}]{f}{}\end{DoxyParamCaption})}
+
+
+
+Função para verificar se a fila está vazia. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em f} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+
+
+Definition at line \textbf{ 79} of file \textbf{ fila.\+c}.
+
